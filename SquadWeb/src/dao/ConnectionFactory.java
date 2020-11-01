@@ -1,29 +1,36 @@
 package dao;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class ConnectionFactory {
-private static final ThreadLocal<Connection> conn = new ThreadLocal<>();
-	
-	static {
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-		} catch (ClassNotFoundException e) {
+	private static final ThreadLocal<Connection> conn = new ThreadLocal<>();
+	static
+	{
+		try
+		{
+			Class.forName("com.mysql.cj.jdbc.Driver");
+		}catch (ClassNotFoundException e)
+		{
 			throw new RuntimeException(e);
 		}
 	}
-
-	// Obtém conexão com o banco de dados
+	
 	public static Connection obtemConexao() throws SQLException {
-		if (conn.get() == null){
+		//if (conn.get() == null){
+			String servidor = "localhost";
+			String porta = "3306";
+			String database = "vendy";
+			String usuario = "root";
+			String senha = "root";
 			conn.set(DriverManager
-					.getConnection("jdbc:mysql://localhost:3306/Paises?useTimezone=true&serverTimezone=UTC&useSSL=false", "root", ""));
-		}
+					.getConnection("jdbc:mysql://"+servidor+":"+porta+"/"+database+"?useSSL=false&useTimezone=true&serverTimezone=UTC", usuario, senha));
+		//}
 		return conn.get();
 	}
-	//Fecha a conexão - usado no servlet destroy
-	public static void fecharConexao() throws SQLException {
+	
+	public static void fechar() throws SQLException {
 		if(conn.get() != null){
 			conn.get().close();
 			conn.set(null);
