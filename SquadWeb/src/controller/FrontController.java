@@ -52,7 +52,7 @@ public class FrontController extends HttpServlet {
 	@Override
 	public void destroy(){
 		try {
-			ConnectionFactory.fecharConexao();
+			ConnectionFactory.fechar();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
