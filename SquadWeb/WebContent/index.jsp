@@ -39,7 +39,7 @@
                 </div>
             </div>
             <div id="actions" class="row">
-				<div class="col-md-12 mx-auto" style="text-align: center">
+				<div class="col-md-8 mx-auto" style="text-align: center">
 					<button type="submit" class="btn btn-primary btn-lg btn-block rounded-pill" name="command" value="Login">Entrar</button>
 				</div>
 			</div>
