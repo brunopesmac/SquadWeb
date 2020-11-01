@@ -1,5 +1,8 @@
 -- MySQL Workbench Forward Engineering
 
+create database carrinho;
+use carrinho;
+
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
@@ -56,12 +59,12 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Pedido` (
   `idPedido` INT NOT NULL,
-  `Descrição` VARCHAR(200) NOT NULL,
+  `Descricao` VARCHAR(200) NOT NULL,
   `Remetente_Usuario_idUsuario1` INT NOT NULL,
   `Destinatario_Usuario_idUsuario1` INT NOT NULL,
   PRIMARY KEY (`idPedido`),
-  INDEX `fk_Pedido_Remetente1_idx` (`Remetente_Usuario_idUsuario1` ASC) VISIBLE,
-  INDEX `fk_Pedido_Destinatario1_idx` (`Destinatario_Usuario_idUsuario1` ASC) VISIBLE,
+  INDEX `fk_Pedido_Remetente1_idx` (`Remetente_Usuario_idUsuario1` ASC),
+  INDEX `fk_Pedido_Destinatario1_idx` (`Destinatario_Usuario_idUsuario1` ASC),
   CONSTRAINT `fk_Pedido_Remetente1`
     FOREIGN KEY (`Remetente_Usuario_idUsuario1`)
     REFERENCES `Remetente` (`Usuario_idUsuario`)
@@ -98,7 +101,7 @@ CREATE TABLE IF NOT EXISTS `Viagem` (
   `Chegada` DATETIME NOT NULL,
   `Pedido_idPedido` INT NOT NULL,
   PRIMARY KEY (`idViagem`, `Pedido_idPedido`),
-  INDEX `fk_Viagem_Pedido1_idx` (`Pedido_idPedido` ASC) VISIBLE,
+  INDEX `fk_Viagem_Pedido1_idx` (`Pedido_idPedido` ASC),
   CONSTRAINT `fk_Viagem_Pedido1`
     FOREIGN KEY (`Pedido_idPedido`)
     REFERENCES `Pedido` (`idPedido`)
@@ -117,7 +120,7 @@ CREATE TABLE IF NOT EXISTS `Local` (
   `Longitude` DECIMAL NOT NULL,
   `Administrador_Usuario_idUsuario` INT NOT NULL,
   PRIMARY KEY (`idLocal`, `Administrador_Usuario_idUsuario`),
-  INDEX `fk_Local_Administrador1_idx` (`Administrador_Usuario_idUsuario` ASC) VISIBLE,
+  INDEX `fk_Local_Administrador1_idx` (`Administrador_Usuario_idUsuario` ASC),
   CONSTRAINT `fk_Local_Administrador1`
     FOREIGN KEY (`Administrador_Usuario_idUsuario`)
     REFERENCES `Administrador` (`Usuario_idUsuario`)
@@ -144,8 +147,8 @@ CREATE TABLE IF NOT EXISTS `Local_para_Trajeto` (
   `Local_Administrador_Usuario_idUsuario` INT NULL,
   `Trajeto_idTrajeto` INT NOT NULL,
   PRIMARY KEY (`Local_idLocal`, `Local_Administrador_Usuario_idUsuario`, `Trajeto_idTrajeto`),
-  INDEX `fk_Local_has_Trajeto_Trajeto1_idx` (`Trajeto_idTrajeto` ASC) VISIBLE,
-  INDEX `fk_Local_has_Trajeto_Local1_idx` (`Local_idLocal` ASC, `Local_Administrador_Usuario_idUsuario` ASC) VISIBLE,
+  INDEX `fk_Local_has_Trajeto_Trajeto1_idx` (`Trajeto_idTrajeto` ASC),
+  INDEX `fk_Local_has_Trajeto_Local1_idx` (`Local_idLocal` ASC, `Local_Administrador_Usuario_idUsuario` ASC),
   CONSTRAINT `fk_Local_has_Trajeto_Local1`
     FOREIGN KEY (`Local_idLocal` , `Local_Administrador_Usuario_idUsuario`)
     REFERENCES `Local` (`idLocal` , `Administrador_Usuario_idUsuario`)
@@ -166,8 +169,8 @@ CREATE TABLE IF NOT EXISTS `Trajeto_para_Viagem` (
   `Trajeto_idTrajeto` INT NOT NULL,
   `Viagem_idViagem` INT NULL,
   PRIMARY KEY (`Trajeto_idTrajeto`, `Viagem_idViagem`),
-  INDEX `fk_Trajeto_has_Viagem_Viagem1_idx` (`Viagem_idViagem` ASC) VISIBLE,
-  INDEX `fk_Trajeto_has_Viagem_Trajeto1_idx` (`Trajeto_idTrajeto` ASC) VISIBLE,
+  INDEX `fk_Trajeto_has_Viagem_Viagem1_idx` (`Viagem_idViagem` ASC),
+  INDEX `fk_Trajeto_has_Viagem_Trajeto1_idx` (`Trajeto_idTrajeto` ASC),
   CONSTRAINT `fk_Trajeto_has_Viagem_Trajeto1`
     FOREIGN KEY (`Trajeto_idTrajeto`)
     REFERENCES `Trajeto` (`idTrajeto`)
