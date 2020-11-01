@@ -7,7 +7,7 @@
         <!-- Meta tags necessárias para o Bootstrap -->
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta charset="UTF-8">
-          <link rel="stylesheet" href="css/style_tela.css">
+        <link rel="stylesheet" href="css/style_tela.css">
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
         <title>ProjectC</title>
@@ -27,31 +27,31 @@
         </div>
         <form action="controller.do" method="post">
             <div class="row">
-                <div class="form-group col-md-6 mx-auto">
+                <div class="form-group col-md-12 mx-auto">
                     <label for="user">Login:</label>
                     <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Digite seu usuário">
                 </div>
             </div>
             <div class="row">
-                <div class="form-group col-md-6 mx-auto">
+                <div class="form-group col-md-12 mx-auto">
                     <label for="senha">Senha:</label>
                     <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite sua senha">
                 </div>
             </div>
             <div id="actions" class="row">
-				<div class="col-md-6 mx-auto" style="text-align: center">
-					<button type="submit" class="btn btn-primary custom" name="command" value="Login">Entrar</button>
+				<div class="col-md-12 mx-auto" style="text-align: center">
+					<button type="submit" class="btn btn-primary btn-lg btn-block" name="command" value="Login">Entrar</button>
 				</div>
 			</div>
 			<div id="actions" class="row">
-				<div class="col-md-6 mx-auto" style="text-align: center">
+				<div class="col-md-12 mx-auto" style="text-align: center">
 					<a href="index.jsp" class="btn btn-default custom"><u>Esqueci minha senha</u></a>
 				</div>
 			</div>
 			<pre></pre>
 			<pre></pre>	
 			<div id="actions" class="row">
-				<div class="col-md-6 mx-auto" style="text-align: center">
+				<div class="col-md-12 mx-auto" style="text-align: center">
 				<a href="index.jsp" class="btn btn-default custom"><u>Cadastre-se</u></a>
 				</div>
 			</div>
