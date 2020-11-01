@@ -1,0 +1,186 @@
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+-- -----------------------------------------------------
+-- Schema mydb
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Table `Usuario`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Usuario` (
+  `idUsuario` INT NOT NULL,
+  `Nome` VARCHAR(45) NOT NULL,
+  `Cpf` INT NOT NULL,
+  `Fone` INT NOT NULL,
+  `Login` VARCHAR(45) NOT NULL,
+  `Senha` VARCHAR(45) NOT NULL,
+  `Tipo` INT NOT NULL,
+  PRIMARY KEY (`idUsuario`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `Remetente`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Remetente` (
+  `Usuario_idUsuario` INT NOT NULL,
+  PRIMARY KEY (`Usuario_idUsuario`),
+  CONSTRAINT `fk_Remetente_Usuario1`
+    FOREIGN KEY (`Usuario_idUsuario`)
+    REFERENCES `Usuario` (`idUsuario`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `Destinatario`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Destinatario` (
+  `Usuario_idUsuario` INT NOT NULL,
+  PRIMARY KEY (`Usuario_idUsuario`),
+  CONSTRAINT `fk_Destinatario_Usuario1`
+    FOREIGN KEY (`Usuario_idUsuario`)
+    REFERENCES `Usuario` (`idUsuario`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `Pedido`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Pedido` (
+  `idPedido` INT NOT NULL,
+  `Descrição` VARCHAR(200) NOT NULL,
+  `Remetente_Usuario_idUsuario1` INT NOT NULL,
+  `Destinatario_Usuario_idUsuario1` INT NOT NULL,
+  PRIMARY KEY (`idPedido`),
+  INDEX `fk_Pedido_Remetente1_idx` (`Remetente_Usuario_idUsuario1` ASC) VISIBLE,
+  INDEX `fk_Pedido_Destinatario1_idx` (`Destinatario_Usuario_idUsuario1` ASC) VISIBLE,
+  CONSTRAINT `fk_Pedido_Remetente1`
+    FOREIGN KEY (`Remetente_Usuario_idUsuario1`)
+    REFERENCES `Remetente` (`Usuario_idUsuario`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Pedido_Destinatario1`
+    FOREIGN KEY (`Destinatario_Usuario_idUsuario1`)
+    REFERENCES `Destinatario` (`Usuario_idUsuario`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `Administrador`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Administrador` (
+  `Usuario_idUsuario` INT NOT NULL,
+  PRIMARY KEY (`Usuario_idUsuario`),
+  CONSTRAINT `fk_Administrador_Usuario`
+    FOREIGN KEY (`Usuario_idUsuario`)
+    REFERENCES `Usuario` (`idUsuario`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `Viagem`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Viagem` (
+  `idViagem` INT NOT NULL,
+  `Partida` DATETIME NOT NULL,
+  `Chegada` DATETIME NOT NULL,
+  `Pedido_idPedido` INT NOT NULL,
+  PRIMARY KEY (`idViagem`, `Pedido_idPedido`),
+  INDEX `fk_Viagem_Pedido1_idx` (`Pedido_idPedido` ASC) VISIBLE,
+  CONSTRAINT `fk_Viagem_Pedido1`
+    FOREIGN KEY (`Pedido_idPedido`)
+    REFERENCES `Pedido` (`idPedido`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `Local`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Local` (
+  `idLocal` INT NOT NULL,
+  `Nome` VARCHAR(45) NOT NULL,
+  `Latitude` DECIMAL NOT NULL,
+  `Longitude` DECIMAL NOT NULL,
+  `Administrador_Usuario_idUsuario` INT NOT NULL,
+  PRIMARY KEY (`idLocal`, `Administrador_Usuario_idUsuario`),
+  INDEX `fk_Local_Administrador1_idx` (`Administrador_Usuario_idUsuario` ASC) VISIBLE,
+  CONSTRAINT `fk_Local_Administrador1`
+    FOREIGN KEY (`Administrador_Usuario_idUsuario`)
+    REFERENCES `Administrador` (`Usuario_idUsuario`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `Trajeto`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Trajeto` (
+  `idTrajeto` INT NOT NULL,
+  `Checkpoint` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idTrajeto`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `Local_para_Trajeto`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Local_para_Trajeto` (
+  `Local_idLocal` INT NULL,
+  `Local_Administrador_Usuario_idUsuario` INT NULL,
+  `Trajeto_idTrajeto` INT NOT NULL,
+  PRIMARY KEY (`Local_idLocal`, `Local_Administrador_Usuario_idUsuario`, `Trajeto_idTrajeto`),
+  INDEX `fk_Local_has_Trajeto_Trajeto1_idx` (`Trajeto_idTrajeto` ASC) VISIBLE,
+  INDEX `fk_Local_has_Trajeto_Local1_idx` (`Local_idLocal` ASC, `Local_Administrador_Usuario_idUsuario` ASC) VISIBLE,
+  CONSTRAINT `fk_Local_has_Trajeto_Local1`
+    FOREIGN KEY (`Local_idLocal` , `Local_Administrador_Usuario_idUsuario`)
+    REFERENCES `Local` (`idLocal` , `Administrador_Usuario_idUsuario`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Local_has_Trajeto_Trajeto1`
+    FOREIGN KEY (`Trajeto_idTrajeto`)
+    REFERENCES `Trajeto` (`idTrajeto`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `Trajeto_para_Viagem`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Trajeto_para_Viagem` (
+  `Trajeto_idTrajeto` INT NOT NULL,
+  `Viagem_idViagem` INT NULL,
+  PRIMARY KEY (`Trajeto_idTrajeto`, `Viagem_idViagem`),
+  INDEX `fk_Trajeto_has_Viagem_Viagem1_idx` (`Viagem_idViagem` ASC) VISIBLE,
+  INDEX `fk_Trajeto_has_Viagem_Trajeto1_idx` (`Trajeto_idTrajeto` ASC) VISIBLE,
+  CONSTRAINT `fk_Trajeto_has_Viagem_Trajeto1`
+    FOREIGN KEY (`Trajeto_idTrajeto`)
+    REFERENCES `Trajeto` (`idTrajeto`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Trajeto_has_Viagem_Viagem1`
+    FOREIGN KEY (`Viagem_idViagem`)
+    REFERENCES `Viagem` (`idViagem`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
