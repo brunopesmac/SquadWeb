@@ -15,7 +15,14 @@
     </head>
     <body>
         <div id="main" class="container">
-            <img src="images/logo.png" class="mx-auto d-block">
+            <img srcset="imagens/logosj.png 320w,
+             imagens/logosj.png 480w,
+             imagens/logosj.png 800w"
+     	sizes="(max-width: 320px) 280px,
+            (max-width: 480px) 440px,
+            800px"
+     			src="imagens/logosj.png"
+            class="mx-auto d-block">
             <h1 class="page-header"style="text-align:center;" >ProjetoC</h1>
         </div>
         <form action="controller.do" method="post">
@@ -41,6 +48,8 @@
 					<a href="index.jsp" class="btn btn-default custom"><u>Esqueci minha senha</u></a>
 				</div>
 			</div>
+			<pre></pre>
+			<pre></pre>	
 			<div id="actions" class="row">
 				<div class="col-md-6 mx-auto" style="text-align: center">
 				<a href="index.jsp" class="btn btn-default custom"><u>Cadastre-se</u></a>

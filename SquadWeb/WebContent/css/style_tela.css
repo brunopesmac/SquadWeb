@@ -3,4 +3,8 @@ body {
 	background: linear-gradient(180deg, rgba(219, 232, 48, 1) 0%,
 		rgba(40, 161, 253, 1) 100%);
 	background-repeat: no-repeat;
+	
 }
+html{
+    min-height: 100%;
+	}
