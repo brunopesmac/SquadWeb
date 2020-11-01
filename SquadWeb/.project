@@ -28,11 +28,4 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>WebContent/Banco/BancoDeDados.sql</name>
-			<type>1</type>
-			<location>C:/Users/gabri/Desktop/banco carrinho.sql</location>
-		</link>
-	</linkedResources>
 </projectDescription>
