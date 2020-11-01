@@ -58,5 +58,10 @@
         </form>
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
+        
+        <div class="footer">
+         	<!-- Rodape -->
+			<c:import url="rodape.jsp"/>
+   		</div>
     </body>
 </html>
