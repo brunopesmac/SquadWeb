@@ -29,18 +29,18 @@
             <div class="row">
                 <div class="form-group col-md-12 mx-auto">
                     <label for="user">Login:</label>
-                    <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Digite seu usuário">
+                    <input type="text" class="form-control rounded" id="usuario" name="usuario" placeholder="Digite seu usuário">
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-12 mx-auto">
                     <label for="senha">Senha:</label>
-                    <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite sua senha">
+                    <input type="password" class="form-control rounded" id="senha" name="senha" placeholder="Digite sua senha">
                 </div>
             </div>
             <div id="actions" class="row">
 				<div class="col-md-12 mx-auto" style="text-align: center">
-					<button type="submit" class="btn btn-primary btn-lg btn-block" name="command" value="Login">Entrar</button>
+					<button type="submit" class="btn btn-primary btn-lg btn-block rounded-pill" name="command" value="Login">Entrar</button>
 				</div>
 			</div>
 			<div id="actions" class="row">
