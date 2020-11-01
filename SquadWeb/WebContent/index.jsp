@@ -20,7 +20,7 @@
              imagens/logosj.png 800w"
      	sizes="(max-width: 320px) 280px,
             (max-width: 480px) 440px,
-            800px"
+            800px "
      			src="imagens/logosj.png"
             class="mx-auto d-block">
             <h1 class="page-header"style="text-align:center;" >ProjetoC</h1>
