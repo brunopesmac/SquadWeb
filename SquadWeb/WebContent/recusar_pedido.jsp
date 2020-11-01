@@ -33,7 +33,7 @@
 					</div>
                 
                 	<div id="actions" style="text-align:center;">
-						<a href=" " class="btn btn-default custom">Voltar</a>
+						<a href="" class="btn btn-default custom">Voltar</a>
 					</div>
             </form>
               <hr>
