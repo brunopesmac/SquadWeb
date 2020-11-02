@@ -143,8 +143,8 @@ ENGINE = InnoDB;
 -- Table `Local_para_Trajeto`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Local_para_Trajeto` (
-  `local_idlocal` INT NULL,
-  `local_administrador_usuario_idusuario` INT NULL,
+  `local_idlocal` INT NOT NULL,
+  `local_administrador_usuario_idusuario` INT NOT NULL,
   `trajeto_idtrajeto` INT NOT NULL,
   PRIMARY KEY (`local_idlocal`, `local_administrador_usuario_idusuario`, `trajeto_idtrajeto`),
   INDEX `fk_Local_has_Trajeto_Trajeto1_idx` (`trajeto_idtrajeto` ASC),
@@ -167,7 +167,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Trajeto_para_Viagem` (
   `trajeto_idtrajeto` INT NOT NULL,
-  `viagem_idviagem` INT NULL,
+  `viagem_idviagem` INT NOT NULL,
   PRIMARY KEY (`trajeto_idtrajeto`, `viagem_idviagem`),
   INDEX `fk_Trajeto_has_Viagem_Viagem1_idx` (`viagem_idviagem` ASC),
   INDEX `fk_Trajeto_has_Viagem_Trajeto1_idx` (`trajeto_idtrajeto` ASC),
