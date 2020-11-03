@@ -40,5 +40,8 @@
         </div>
 
 		<script type="text/javascript" src="<%= request.getContextPath() %>/js/inputText.js"></script>
+		
+		<script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
 	</body>
 </html>

@@ -28,34 +28,38 @@
         	</div>
             <div class="row">
                 <div class="form-group col-md-12 mx-auto">
-                    <label for="nome">Nome:</label>
                     <input type="text" class="form-control rounded" id="nome" name="nome" placeholder="Nome Completo">
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-12 mx-auto">
-                    <label for="cpf">CPF:</label>
                     <input type="text" class="form-control rounded" id="cpf" name="cpf" placeholder="CPF">
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-12 mx-auto">
-                    <label for="telefone">Telefone:</label>
                     <input type="text" class="form-control rounded" id="telefone" name="telefone" placeholder="Telefone Celular">
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-12 mx-auto">
-                    <label for="usuario">Usuário:</label>
                     <input type="text" class="form-control rounded" id="usuario" name="usuario" placeholder="Usuário">
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-12 mx-auto">
-                    <label for="senha">Senha:</label>
                     <input type="password" class="form-control rounded" id="senha" name="senha" placeholder="Senha">
                 </div>
             </div>
+            <div class="dropdown">
+	            <select class="form-control" id="tipo" name="tipo">
+	            	<option>Selecione o tipo de usuário</option>
+	            	<option>Remetente</option>
+	                <option>Destinatário</option>
+	            </select>                
+            </div>
+            <pre></pre>
+            <pre></pre>
             <div id="actions" class="row">
 				<div class="col-md-6 mx-auto" style="text-align: center">
 					<button type="submit" class="btn btn-primary btn-lg btn-block rounded-pill" name="command" value="CadastrarUsuario">Cadastrar</button>
