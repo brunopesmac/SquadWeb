@@ -13,7 +13,10 @@
         <title>ProjectC</title>
         
         <style>
-        	label, h2 {
+        	h {
+        		color: #FF0000;
+        	}
+        	label {
         		color: #373f85;
         	}
         </style>
@@ -24,17 +27,24 @@
     	<pre></pre>
         <div id="main" class="container">
             <h1 class="page-header"style="text-align:center">ProjetoC</h1>
-            <h2 class="page-header"style="text-align:center">Relatório do Pedido</h2>
         </div>
         <pre></pre>
         <form action="controller.do" method="post">
+        	<div class="row">
+        		<div class="col-md-12 mx-auto">
+        			<h3>Pedido Solicitado</h3>
+        		</div>
+        	</div>
             <div class="form-group">
-  				<label for="relatorioPedido"></label>
+  				<label for="motivoPedidoRecusado"></label>
   				<textarea class="form-control"style="border-radius:20px; height:300px" aria-label="With textarea">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut en mollit anim id est laborum.</textarea>
 			</div>
             <div id="actions" class="row">
 				<div class="col-md-6 mx-auto" style="text-align: center">
-					<a href="telaInicialUsuario.jsp" class="btn btn-primary btn-lg btn-block rounded-pill">Ok</a>
+					<button type="submit" class="btn btn-primary btn-lg btn-block rounded-pill" name="command" value="NovoPedido">Aceitar</button>
+				</div>
+				<div class="col-md-6 mx-auto" style="text-align: center">
+					<button type="submit" class="btn btn-danger btn-lg btn-block rounded-pill"name="command" value="RecusarPedido">Recusar</button>
 				</div>
 			</div>
         </form>

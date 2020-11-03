@@ -24,7 +24,7 @@
      			src="imagens/logosj.png"
             class="mx-auto d-block">
             <pre></pre>
-            <h1 class="page-header"style="text-align:center;" >ProjetoC - Recuperar Senha</h1>
+            <h1 class="page-header"style="text-align:center" >ProjetoC - Recuperar Senha</h1>
         </div>
         <pre></pre>	
         <pre></pre>	

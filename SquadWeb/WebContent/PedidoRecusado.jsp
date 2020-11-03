@@ -32,8 +32,8 @@
         <pre></pre>
         <form action="controller.do" method="post">
             <div class="form-group">
-  				<label for="motivoPedidoRecusado">Seu pedido foi recusado pois:</label>
-  				<textarea class="form-control rounded-0" id="motivoPedidoRecusado" rows="10"></textarea>
+  				<label for="motivoPedidoRecusado"></label>
+  				<textarea class="form-control"style="border-radius:20px; height:300px" aria-label="With textarea">Seu pedido foi recusado pois:</textarea>
 			</div>
             <div id="actions" class="row">
 				<div class="col-md-6 mx-auto" style="text-align: center">
