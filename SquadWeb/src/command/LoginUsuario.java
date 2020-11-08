@@ -20,13 +20,13 @@ public class LoginUsuario implements Command {
 			throws ServletException, IOException {
 		String pUser = request.getParameter("usuario");
 		String pPsw = request.getParameter("senha");
-		
+		System.out.print("cheguei");
 		Login login= new Login(pUser, pPsw);		
 		LoginService ls = new LoginService();
 		ls.validacao(login);
 		UsuarioService us = new UsuarioService();
 		Usuario usuario= us.carregar(login.getId());
-		
+		System.out.print(usuario.getTipo());
 		if(usuario.getTipo() == 1) {
 			HttpSession sessionOp = request.getSession();
 			sessionOp.setAttribute("logado", usuario);
@@ -40,7 +40,7 @@ public class LoginUsuario implements Command {
 			HttpSession sessionEs = request.getSession();
 			sessionEs.setAttribute("logado", usuario);
 			request.setAttribute("Remetente", usuario);
-			RequestDispatcher view = request.getRequestDispatcher("teka_remetente.jsp");
+			RequestDispatcher view = request.getRequestDispatcher("TelaInicialRemetente.jsp");
 			view.forward(request, response);
 			System.out.println("Remetente "+usuario.getNome()+" logou");
 			
