@@ -18,6 +18,13 @@ public class PedidoDAO {
             stm.setInt(2, pedido.getIdRem());
             stm.setInt(3, pedido.getIdDes());
             stm.execute();
+            String sqlQuery = "SELECT LAST_INSERT_ID()";
+			try (PreparedStatement stm2 = conn.prepareStatement(sqlQuery);
+					ResultSet rs = stm2.executeQuery();) {
+				if(rs.next()) {
+					pedido.setId(rs.getInt(1));
+				}
+			}
         } catch (SQLException e) {
             e.printStackTrace();
            
