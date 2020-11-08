@@ -14,6 +14,7 @@ public class Usuario {
 		this.fone = fone;
 		this.tipo = tipo;
 	}
+
 	public Usuario(int cod) {
 		this.cod=cod;
 	}

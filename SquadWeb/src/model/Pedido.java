@@ -2,8 +2,8 @@ package model;
 
 public class Pedido {
 	
-		int id, idRem,idDes;
-		String descricao;
+	private int id, idRem,idDes;
+	private String descricao;
 		
 		public Pedido(int id,String descricao, int idRem, int idDes) {
 			this.id=id;

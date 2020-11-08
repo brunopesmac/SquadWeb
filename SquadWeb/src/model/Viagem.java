@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class Viagem {
 	
-	int id;
-	String partida, chegada;
-	ArrayList<String> pontos = new ArrayList<String>();
+	private int id;
+	private String partida, chegada;
+	private ArrayList<String> pontos = new ArrayList<String>();
 	
 	public Viagem(int id, String partida, String chegada, ArrayList<String> pontos) {
 		this.id = id;
