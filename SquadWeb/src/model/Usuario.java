@@ -14,6 +14,11 @@ public class Usuario {
 		this.fone = fone;
 		this.tipo = tipo;
 	}
+	public Usuario(int cod) {
+		this.cod=cod;
+	}
+	public Usuario() {}
+	
 	public int getCod() {
 		return cod;
 	}

@@ -21,9 +21,9 @@ public class ConnectionFactory {
 		//if (conn.get() == null){
 			String servidor = "localhost";
 			String porta = "3306";
-			String database = "vendy";
+			String database = "carrinho";
 			String usuario = "root";
-			String senha = "root";
+			String senha = "";
 			conn.set(DriverManager
 					.getConnection("jdbc:mysql://"+servidor+":"+porta+"/"+database+"?useSSL=false&useTimezone=true&serverTimezone=UTC", usuario, senha));
 		//}
