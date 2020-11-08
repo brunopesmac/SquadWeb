@@ -14,6 +14,14 @@ public class Usuario {
 		this.fone = fone;
 		this.tipo = tipo;
 	}
+	public Usuario(String nome, String login, String senha, int cpf, int fone, int tipo) {
+		this.nome = nome;
+		this.login = login;
+		this.senha = senha;
+		this.cpf = cpf;
+		this.fone = fone;
+		this.tipo = tipo;
+	}
 
 	public Usuario(int cod) {
 		this.cod=cod;

@@ -17,7 +17,7 @@ public class UsuarioDAO {
             stm.setInt(2, usuario.getCpf());
             stm.setInt(3, usuario.getFone());
             stm.setString(4, usuario.getLogin());
-            stm.setString(4, usuario.getSenha());
+            stm.setString(5, usuario.getSenha());
             stm.setInt(6, usuario.getTipo());
             stm.execute();
             String sqlQuery = "SELECT LAST_INSERT_ID()";

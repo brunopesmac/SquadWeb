@@ -8,13 +8,14 @@ import java.sql.SQLException;
 import model.Login;
 
 public class LoginDAO {
-	
+
 	public Login logar(Login login) {
-		String sqlSelect = "select idUsuario from Usuario where login="+login.getLogin()+"and senha ="+login.getSenha()+"";
+		String sqlSelect = "select idUsuario from Usuario where login=? and senha = ?";
 		try (Connection conn = ConnectionFactory.obtemConexao();
-				PreparedStatement stm = conn.prepareStatement(sqlSelect);
-				) {
-			try (ResultSet rs = stm.executeQuery();) {
+				PreparedStatement stm = conn.prepareStatement(sqlSelect);){
+				stm.setString(1, login.getLogin());
+				stm.setString(2, login.getSenha());
+			try (ResultSet rs = stm.executeQuery()) {
 				if (rs.next()) {
 					login.setId(rs.getInt("idUsuario"));
 					return login;
@@ -32,6 +33,6 @@ public class LoginDAO {
 			System.out.print(e1.getStackTrace());
 			return null;
 		}	
-	}
-
+		}
+	
 }

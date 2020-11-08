@@ -20,13 +20,12 @@ public class LoginUsuario implements Command {
 			throws ServletException, IOException {
 		String pUser = request.getParameter("usuario");
 		String pPsw = request.getParameter("senha");
-		System.out.print("cheguei");
 		Login login= new Login(pUser, pPsw);		
 		LoginService ls = new LoginService();
 		ls.validacao(login);
 		UsuarioService us = new UsuarioService();
 		Usuario usuario= us.carregar(login.getId());
-		System.out.print(usuario.getTipo());
+		
 		if(usuario.getTipo() == 1) {
 			HttpSession sessionOp = request.getSession();
 			sessionOp.setAttribute("logado", usuario);

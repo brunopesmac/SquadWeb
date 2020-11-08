@@ -28,7 +28,7 @@
             <pre></pre>
             <pre></pre>
             <h1 class="page-header" style = "text-align:center;" >ProjetoC</h1>
-            <h1 class="page-header" style = "text-align:center;" >Bem vindo(a) ${usuario.nome}, selecione uma opção no menu acima</h1>
+            <h1 class="page-header" style = "text-align:center;" >Bem vindo(a) ${Remetente.nome}, selecione uma opção no menu acima</h1>
         </div>
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>

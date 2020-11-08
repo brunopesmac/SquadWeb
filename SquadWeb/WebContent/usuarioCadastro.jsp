@@ -28,31 +28,31 @@
         	</div>
             <div class="row">
                 <div class="form-group col-md-12 mx-auto">
-                    <input type="text" class="form-control rounded" id="nome" name="nome" placeholder="Nome Completo">
+                    <input type="text" class="form-control rounded" id="nome" name="nome" placeholder="Nome Completo"required>
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-12 mx-auto">
-                    <input type="text" class="form-control rounded" id="cpf" name="cpf" placeholder="CPF">
+                    <input type="text" class="form-control rounded" id="cpf" name="cpf" placeholder="CPF"required>
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-12 mx-auto">
-                    <input type="text" class="form-control rounded" id="telefone" name="telefone" placeholder="Telefone Celular">
+                    <input type="text" class="form-control rounded" id="fone" name="fone" placeholder="Telefone Celular"required>
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-12 mx-auto">
-                    <input type="text" class="form-control rounded" id="usuario" name="usuario" placeholder="Usuário">
+                    <input type="text" class="form-control rounded" id="login" name="login" placeholder="Usuário"required>
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-12 mx-auto">
-                    <input type="password" class="form-control rounded" id="senha" name="senha" placeholder="Senha">
+                    <input type="password" class="form-control rounded" id="senha" name="senha" placeholder="Senha"required>
                 </div>
             </div>
             <div class="dropdown">
-	            <select class="form-control" id="tipo" name="tipo">
+	            <select class="form-control" id="tipo" name="tipo"required>
 	            	<option>Selecione o tipo de usuário</option>
 	            	<option>Remetente</option>
 	                <option>Destinatário</option>
@@ -62,7 +62,7 @@
             <pre></pre>
             <div id="actions" class="row">
 				<div class="col-md-6 mx-auto" style="text-align: center">
-					<button type="submit" class="btn btn-primary btn-lg btn-block rounded-pill" name="command" value="CadastrarUsuario">Cadastrar</button>
+					<button type="submit" class="btn btn-primary btn-lg btn-block rounded-pill" name="command" value="IncluirUsuario">Cadastrar</button>
 				</div>
 				<div class="col-md-6 mx-auto" style="text-align: center">
 					<a href="usuarioCadastro.jsp" class="btn btn-secondary btn-lg btn-block rounded-pill">Cancelar</a>
