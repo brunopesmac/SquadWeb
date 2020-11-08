@@ -40,25 +40,36 @@
         		<div class="col-md-12 mx-auto">
         			<div class="form-group">
   						<label for="LocalPontoInicial"></label>
-  						<textarea class="form-control"style="border-radius:20px; height:150px" aria-label="With textarea">Checkpoint 1&#13;&#10;Checkpoint 2&#13;&#10;Checkpoint 3 ${viagem.checkpoint1 }</textarea>
+  						<textarea class="form-control"style="border-radius:20px; height:150px" aria-label="With textarea">Checkpoint 1&#13;&#10;Checkpoint 2&#13;&#10;Checkpoint 3&#13;&#10;Checkpoint 4&#13;&#10;Checkpoint 5</textarea>
 					</div>
 				</div>
 			</div>
 			<pre></pre>
 			<pre></pre>
 			<div class="row">
-        		<div class="col-md-12 mx-auto">
-        			<h3>Voltando ao Ponto Inicial <img src="imagens/loading.gif" alt=""  width="20" alt="imagens/loading.gif"/></h3>	
+        		<div class="col-md-6 mx-auto">
+        			<h3>Remetente</h3>	
+        		</div>
+        		<div class="col-md-6 mx-auto">
+        			<h3>Destinatário</h3>	
         		</div>
         	</div>
         	<div class="row">
-        		<div class="col-md-12 mx-auto">
+        		<div class="col-md-6 mx-auto">
         			<div class="form-group">
-  						<label for="LocalPontoInicial"></label>
-  						<textarea class="form-control"style="border-radius:20px; height:80px" aria-label="With textarea">De: ${rememente.nome } #${remetente.id }&#13;&#10;Local: ${local.nome } #${local.id }</textarea>
+  						<label for="remetentePedido"></label>
+  						<textarea class="form-control"style="border-radius:20px; height:70px" aria-label="With textarea">Nome: ${rememente.nome } #${remetente.id }&#13;&#10;Local: ${local.nome } #${local.id }</textarea>
+					</div>
+				</div>
+				<div class="col-md-6 mx-auto">
+        			<div class="form-group">
+  						<label for="destinatarioPedido"></label>
+  						<textarea class="form-control"style="border-radius:20px; height:70px" aria-label="With textarea">Nome: ${destinatario.nome } #${destinatario.id }&#13;&#10;Local: ${local.nome } #${local.id }</textarea>
 					</div>
 				</div>
 			</div>
+			<pre></pre>
+			<pre></pre>
 			<div id="actions" class="row">
 				<div class="col-md-6 mx-auto" style="text-align: center">
 					<a href="telaInicialUsuario.jsp" class="btn btn-primary btn-lg btn-block rounded-pill">Ok</a>
