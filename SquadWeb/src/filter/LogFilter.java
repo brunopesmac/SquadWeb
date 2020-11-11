@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 
 import model.Usuario;
 
-@WebFilter("/*")
+//@WebFilter("/*")
 public class LogFilter implements Filter {
 
 	@Override
