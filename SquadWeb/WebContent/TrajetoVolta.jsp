@@ -40,7 +40,7 @@
         		<div class="col-md-12 mx-auto">
         			<div class="form-group">
   						<label for="LocalPontoInicial"></label>
-  						<textarea class="form-control"style="border-radius:20px; height:150px" aria-label="With textarea">Checkpoint 1&#13;&#10;Checkpoint 2&#13;&#10;Checkpoint 3 ${viagem.checkpoint1 }</textarea>
+  						<textarea class="form-control"style="border-radius:20px; height:150px" aria-label="With textarea" disabled>Checkpoint 1&#13;&#10;Checkpoint 2&#13;&#10;Checkpoint 3 ${viagem.checkpoint1 }</textarea>
 					</div>
 				</div>
 			</div>
@@ -55,7 +55,7 @@
         		<div class="col-md-12 mx-auto">
         			<div class="form-group">
   						<label for="LocalPontoInicial"></label>
-  						<textarea class="form-control"style="border-radius:20px; height:80px" aria-label="With textarea">De: ${rememente.nome } #${remetente.id }&#13;&#10;Local: ${local.nome } #${local.id }</textarea>
+  						<textarea class="form-control"style="border-radius:20px; height:80px" aria-label="With textarea" disabled>De: ${rememente.nome } #${remetente.id }&#13;&#10;Local: ${local.nome } #${local.id }</textarea>
 					</div>
 				</div>
 			</div>

@@ -40,8 +40,9 @@
         		<div class="col-md-12 mx-auto">
         			<div class="form-group">
   						<label for="LocalPontoInicial"></label>
-  						<textarea class="form-control"style="border-radius:20px; height:150px" aria-label="With textarea">Checkpoint 1&#13;&#10;Checkpoint 2&#13;&#10;Checkpoint 3&#13;&#10;Checkpoint 4&#13;&#10;Checkpoint 5</textarea>
+  						<textarea class="form-control"style="border-radius:20px; height:150px" aria-label="With textarea" disabled>Checkpoint 1	&#13;&#10;Checkpoint 2&#13;&#10;Checkpoint 3&#13;&#10;Checkpoint 4&#13;&#10;Checkpoint 5</textarea>
 					</div>
+					
 				</div>
 			</div>
 			<pre></pre>
@@ -58,13 +59,13 @@
         		<div class="col-md-6 mx-auto">
         			<div class="form-group">
   						<label for="remetentePedido"></label>
-  						<textarea class="form-control"style="border-radius:20px; height:70px" aria-label="With textarea">Nome: ${rememente.nome } #${remetente.id }&#13;&#10;Local: ${local.nome } #${local.id }</textarea>
+  						<textarea class="form-control"style="border-radius:20px; height:70px" aria-label="With textarea" disabled>Nome: ${rememente.nome } #${remetente.id }&#13;&#10;Local: ${local.nome } #${local.id }</textarea>
 					</div>
 				</div>
 				<div class="col-md-6 mx-auto">
         			<div class="form-group">
   						<label for="destinatarioPedido"></label>
-  						<textarea class="form-control"style="border-radius:20px; height:70px" aria-label="With textarea">Nome: ${destinatario.nome } #${destinatario.id }&#13;&#10;Local: ${local.nome } #${local.id }</textarea>
+  						<textarea class="form-control"style="border-radius:20px; height:70px" aria-label="With textarea" disabled>Nome: ${destinatario.nome } #${destinatario.id }&#13;&#10;Local: ${local.nome } #${local.id }</textarea>
 					</div>
 				</div>
 			</div>
