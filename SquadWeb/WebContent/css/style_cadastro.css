@@ -27,3 +27,49 @@ h1, h3, u {
 	color: #373f85;
 }
 
+.progress-bar {
+	width: 100%;
+	height: 32px;
+	background-color: gray;
+	position: relative;
+}
+
+.progress-indicator {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAH0AAAAgCAYAAAA/kHcMAAABFUlEQVRo3u3YPW6DMBiAYX8VMyLeQb4DopUyVaIsmfFteoWexGLuQL1GSiNfAg6A2JHcsR36k6FSVed9Vjz51YcNUtd1VLgqN2wB0UF0EB1EB9FBdBAdRAfR8QtERGmtvTHmEEKQEIIYYw5aay8i7+v4DZuGLMu2qqr2zrnzZ8+ttc00Tcdt2zImPZEJL8uy+yq4Uko5585VVe1FhElPQVEUr977u0vWdl33wo4BAJDIxY+L3P+ntfbjOD5csrZt2xOfbAlYlqW11jY/rev7/n5d11uiJyDGqKZpOn4X3lrbzPM8xhh5vSd1Vouo3W7n8zx/Gobh+cN0Py7L0sYYOdOvFa93ooPoIDqIDqKD6CA6iI4/9AZ+BlVJ/MotKwAAAABJRU5ErkJggg==');
+	float: left;
+}
+
+.progress-bar-fill-area {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: #63BC62;
+	width: 0%;
+}
+
+.step1 .progress-bar-fill-area {
+	width: 25%;
+	transition: width 7s;
+}
+
+.step2 .progress-bar-fill-area {
+	width: 50%;
+	transition: width 4s;
+}
+
+.step3 .progress-bar-fill-area {
+	width: 75%;
+	transition: width 3s;
+}
+
+.step4 .progress-bar-fill-area {
+	width: 100%;
+	transition: width 6s;
+}

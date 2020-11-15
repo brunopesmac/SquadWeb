@@ -30,7 +30,7 @@
         <form action="controller.do" method="post">
         	<div class="dropdown">
         		<div class="input-group-prepend">
-          			<div class="input-group-text">De</div>
+          			<div class="input-group-text" value="">De</div>
 	           		<select class="form-control" id="localOrigem" name="localOrigem">
 	           			<option>Selecione o local de partida</option>
 	           			<option>Biblioteca</option>
@@ -58,7 +58,7 @@
 					<button type="submit" class="btn btn-primary btn-lg btn-block rounded-pill" name="command" value="EnviarPedido">Enviar Pedido</buttom>
 				</div>
 				<div class="col-md-6 mx-auto" style="text-align: center">
-					<a href="SolicitarPedido.jsp" class="btn btn-secondary btn-lg btn-block rounded-pill">Cancelar</a>
+					<a href="TelaInicialRemetente.jsp" class="btn btn-secondary btn-lg btn-block rounded-pill">Cancelar</a>
 				</div>
 			</div>
 			<pre></pre>

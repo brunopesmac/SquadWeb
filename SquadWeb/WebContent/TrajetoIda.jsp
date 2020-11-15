@@ -33,16 +33,15 @@
         <form action="controller.do" method="post">
         	<div class="row">
         		<div class="col-md-12 mx-auto">
-        			<h3>Trajeto <img src="imagens/loading.gif" alt=""  width="20" alt="imagens/loading.gif"/></h3>
+        			<h3>Trajeto</h3>
         		</div>
         	</div>
-        	<div class="row">
-        		<div class="col-md-12 mx-auto">
-        			<div class="form-group">
-  						<label for="LocalPontoInicial"></label>
-  						<textarea class="form-control"style="border-radius:20px; height:150px" aria-label="With textarea" disabled>Checkpoint 1	&#13;&#10;Checkpoint 2&#13;&#10;Checkpoint 3&#13;&#10;Checkpoint 4&#13;&#10;Checkpoint 5</textarea>
-					</div>
-					
+        	<pre></pre>
+        	<h5>&emsp;&ensp;Rampa&emsp;&emsp;&ensp;Lanchonete&emsp;Rampa Ext.&emsp;&emsp;&nbsp;Entrada&emsp;&emsp;&nbsp;&nbsp;Refeitório&emsp;&emsp;Subway</h5>
+        	<div class="progress" style='height: 100%; width:100%'>
+				<div class="progress-bar">
+					<div class="progress-bar-fill-area"></div>
+					<div class="progress-indicator"></div>
 				</div>
 			</div>
 			<pre></pre>
@@ -59,13 +58,13 @@
         		<div class="col-md-6 mx-auto">
         			<div class="form-group">
   						<label for="remetentePedido"></label>
-  						<textarea class="form-control"style="border-radius:20px; height:70px" aria-label="With textarea" disabled>Nome: ${rememente.nome } #${remetente.id }&#13;&#10;Local: ${local.nome } #${local.id }</textarea>
+  						<textarea class="form-control"style="border-radius:20px; height:70px" aria-label="With textarea" disabled>Nome: ${rememente.nome } Ana${remetente.id }&#13;&#10;Local: ${local.nome } Biblioteca${local.id }</textarea>
 					</div>
 				</div>
 				<div class="col-md-6 mx-auto">
         			<div class="form-group">
   						<label for="destinatarioPedido"></label>
-  						<textarea class="form-control"style="border-radius:20px; height:70px" aria-label="With textarea" disabled>Nome: ${destinatario.nome } #${destinatario.id }&#13;&#10;Local: ${local.nome } #${local.id }</textarea>
+  						<textarea class="form-control"style="border-radius:20px; height:70px" aria-label="With textarea" disabled>Nome: ${destinatario.nome } João${destinatario.id }&#13;&#10;Local: ${local.nome } Subway${local.id }</textarea>
 					</div>
 				</div>
 			</div>
@@ -87,3 +86,13 @@
    		</div>
     </body>
 </html>
+
+<script>
+	var n = 0;
+	setInterval(function() {
+		var bar = document.querySelector(".progress");
+		bar.classList.remove("step" + ((n + 4) % 5));
+		bar.classList.add("step" + n);
+		n = (n + 1) % 5;
+	}, 5000);
+</script>
