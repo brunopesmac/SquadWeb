@@ -76,7 +76,7 @@ public class UsuarioDAO {
 					usuario.setFone(rs.getLong("fone"));
 					usuario.setLogin(rs.getString("login"));
 					usuario.setSenha(rs.getString("senha"));
-					usuario.setTipo(rs.getInt("email"));
+					usuario.setEmail(rs.getString("email"));
 					usuario.setTipo(rs.getInt("tipo"));
 							
 				} return usuario;
