@@ -51,7 +51,7 @@
             </div>
             <div class="form-group">
   				<label for="relatorioPedido"></label>
-  				<textarea class="form-control"style="border-radius:20px; height:300px" aria-label="With textarea">Descreva seu pedido</textarea>
+  				<textarea class="form-control"style="border-radius:20px; height:300px" aria-label="With textarea" placeholder='Descreva seu pedido...'></textarea>
 			</div>
             <div id="actions" class="row">
 				<div class="col-md-6 mx-auto" style="text-align: center">
