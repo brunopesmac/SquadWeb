@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="css/style_login.css">
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
-        <title>ProjectC</title>
+        <title>ProjectC</title> 
         
     </head>
     <body>
