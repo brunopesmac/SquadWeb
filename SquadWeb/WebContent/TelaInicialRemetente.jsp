@@ -14,7 +14,13 @@
         
     </head>
     <!-- Rodape -->
-	<c:import url="MenuSuperiorRemetente.jsp"/>
+    <c:choose>
+   		<c:when test="${Remetente.tipo == 2}"><c:import url="MenuEnvio.jsp"/></c:when> 
+   		<c:when test="${Remetente.tipo == 3}"><c:import url="MenuPedido.jsp"/></c:when> 
+   		<c:otherwise><c:import url="MenuAdm.jsp"/></c:otherwise>    
+	</c:choose>
+    
+	
     <body>
         <div id="main" class="container">
             <img srcset= "imagens/logosj.png 320w,
