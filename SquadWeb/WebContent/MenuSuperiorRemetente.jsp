@@ -16,7 +16,7 @@
         <a class="nav-link" href="#">Atualizar Dados</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="SolicitarPedido.jsp">Realizar Pedido</a>
+        <a class="nav-link" href="SolicitarPedido.jsp">Enviar Pedido</a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="#">Ver Pedidos Ativos</a>
