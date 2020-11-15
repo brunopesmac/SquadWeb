@@ -10,15 +10,16 @@ import model.Usuario;
 
 public class UsuarioDAO {
 	public Usuario incluir(Usuario usuario) throws ParseException{
-        String SQLInsert = "INSERT INTO Usuario (nome,cpf,fone,login,senha,tipo) VALUES (?,?,?,?,?,?)";
+        String SQLInsert = "INSERT INTO Usuario (nome,cpf,fone,login,senha,tipo,email) VALUES (?,?,?,?,?,?,?)";
         try(Connection conn = ConnectionFactory.obtemConexao();
                 PreparedStatement stm = conn.prepareStatement(SQLInsert);){
             stm.setString(1, usuario.getNome());
-            stm.setInt(2, usuario.getCpf());
-            stm.setInt(3, usuario.getFone());
+            stm.setLong(2, usuario.getCpf());
+            stm.setLong(3, usuario.getFone());
             stm.setString(4, usuario.getLogin());
             stm.setString(5, usuario.getSenha());
             stm.setInt(6, usuario.getTipo());
+            stm.setString(7, usuario.getEmail());
             stm.execute();
             String sqlQuery = "SELECT LAST_INSERT_ID()";
             try (PreparedStatement stm2 = conn.prepareStatement(sqlQuery);
@@ -35,15 +36,16 @@ public class UsuarioDAO {
     }
 	
 	public void atualizar(Usuario usuario) {
-		String SQLUpdate = "UPDATE Usuario SET nome=?,fone=?,login=?,senha?,tipo=? WHERE idUsuario=?";
+		String SQLUpdate = "UPDATE Usuario SET nome=?,fone=?,login=?,senha?,tipo=?,email=? WHERE idUsuario=?";
 		try(Connection conn = ConnectionFactory.obtemConexao();
 				PreparedStatement stm = conn.prepareStatement(SQLUpdate);){
 	            stm.setString(1, usuario.getNome()); 
-	            stm.setInt(2, usuario.getFone());
+	            stm.setLong(2, usuario.getFone());
 	            stm.setString(3, usuario.getLogin());
 	            stm.setString(4, usuario.getSenha());
 	            stm.setInt(5,usuario.getTipo());
-	            stm.setInt(6, usuario.getCod());
+	            stm.setString(6, usuario.getEmail());
+	            stm.setInt(7, usuario.getCod());
 	            stm.execute();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -74,6 +76,7 @@ public class UsuarioDAO {
 					usuario.setFone(rs.getInt("fone"));
 					usuario.setLogin(rs.getString("login"));
 					usuario.setSenha(rs.getString("senha"));
+					usuario.setTipo(rs.getInt("email"));
 					usuario.setTipo(rs.getInt("tipo"));
 							
 				} return usuario;

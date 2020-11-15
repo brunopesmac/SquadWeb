@@ -23,7 +23,7 @@ public class ConnectionFactory {
 			String porta = "3306";
 			String database = "carrinho";
 			String usuario = "root";
-			String senha = "";
+			String senha = "root";
 			conn.set(DriverManager
 					.getConnection("jdbc:mysql://"+servidor+":"+porta+"/"+database+"?useSSL=false&useTimezone=true&serverTimezone=UTC", usuario, senha));
 		//}

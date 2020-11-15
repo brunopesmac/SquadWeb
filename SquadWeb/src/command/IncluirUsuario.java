@@ -20,10 +20,11 @@ public class IncluirUsuario implements Command {
 	public void executar(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String nome = request.getParameter("nome");
-		int cpf = Integer.parseInt(request.getParameter("cpf"));
-		int fone = Integer.parseInt(request.getParameter("fone"));
+		long cpf = Long.parseLong(request.getParameter("cpf"));
+		long fone = Long.parseLong(request.getParameter("fone")); 
 		String login = request.getParameter("login");
 		String senha = request.getParameter("senha");
+		String email = request.getParameter("email");
 		String tipoRD = request.getParameter("tipo");
 		int tipo=0;
 		if(tipoRD.equals("Remetente")) {
@@ -33,7 +34,7 @@ public class IncluirUsuario implements Command {
 		}else
 			tipo=1;
 		
-		Usuario usuario = new Usuario(nome, login, senha,cpf,fone,tipo);
+		Usuario usuario = new Usuario(nome, login, senha,email,cpf,fone,tipo);
 		UsuarioService us = new UsuarioService();
 		RequestDispatcher view = null;
 		HttpSession session = request.getSession();

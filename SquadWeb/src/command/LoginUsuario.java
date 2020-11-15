@@ -25,7 +25,7 @@ public class LoginUsuario implements Command {
 		ls.validacao(login);
 		UsuarioService us = new UsuarioService();
 		Usuario usuario= us.carregar(login.getId());
-		
+		System.out.println(usuario.getTipo());
 		if(usuario.getTipo() == 1) {
 			HttpSession sessionOp = request.getSession();
 			sessionOp.setAttribute("logado", usuario);
