@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="css/style_login.css">
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
-        <title>ProjectC</title> 
+        <title>ProjectC</title>
         
     </head>
     <body>
@@ -31,13 +31,13 @@
             <div class="row">
                 <div class="form-group col-md-12 mx-auto">
                     <label for="user">Login:</label>
-                    <input type="text" class="form-control rounded" id="usuario" name="usuario" placeholder="Digite seu usuário">
+                    <input type="text" class="form-control rounded" id="usuario" name="usuario" placeholder="Digite seu usuário" required>
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-12 mx-auto">
                     <label for="senha">Senha:</label>
-                    <input type="password" class="form-control rounded" id="senha" name="senha" placeholder="Digite sua senha">
+                    <input type="password" class="form-control rounded" id="senha" name="senha" placeholder="Digite sua senha" required>
                 </div>
             </div>
             <div id="actions" class="row">

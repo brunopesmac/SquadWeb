@@ -32,6 +32,11 @@
                 </div>
             </div>
             <div class="row">
+				<div class="form-group col-md-12 mx-auto">
+					<input type="email" class="form-control" name="email" id="email" required maxlength="100" placeholder="Email"required/>
+				</div>
+			</div>	
+            <div class="row">
                 <div class="form-group col-md-12 mx-auto">
                     <input type="text" class="form-control rounded" id="cpf" name="cpf" placeholder="CPF"required>
                 </div>
@@ -43,7 +48,7 @@
             </div>
             <div class="row">
                 <div class="form-group col-md-12 mx-auto">
-                    <input type="text" class="form-control rounded" id="login" name="login" placeholder="Usuário"required>
+                    <input type="text" class="form-control rounded" id="login" name="login" placeholder="Usuário(Usada Para Login)"required>
                 </div>
             </div>
             <div class="row">

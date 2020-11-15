@@ -57,16 +57,11 @@
 				<div class="col-md-6 mx-auto" style="text-align: center">
 					<button type="submit" class="btn btn-primary btn-lg btn-block rounded-pill" name="command" value="SolicitarPedido">Solicitar Pedido</buttom>
 				</div>
-			</div>
-			<pre></pre>
-			<div id="actions" class="row">
-				<div class="col-md-6 mx-auto" style="text-align: center">
-					<a href=" " class="btn btn-primary btn-lg btn-block rounded-pill">Notificações</a>
-				</div>
 				<div class="col-md-6 mx-auto" style="text-align: center">
 					<a href="SolicitarPedido.jsp" class="btn btn-secondary btn-lg btn-block rounded-pill">Cancelar</a>
 				</div>
 			</div>
+			<pre></pre>
         </form>
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>

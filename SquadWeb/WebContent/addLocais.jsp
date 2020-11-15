@@ -30,25 +30,25 @@
 		<div class="row">
 			<div class="form-group col-md-12 mx-auto">
 				<input type="text" class="form-control rounded" id="id"
-					name="id" placeholder="ID">
+					name="id" placeholder="ID" required>
 			</div>
 		</div>
 		<div class="row">
 			<div class="form-group col-md-12 mx-auto">
 				<input type="text" class="form-control rounded" id="nome"
-					name="nome" placeholder="Nome">
+					name="nome" placeholder="Nome" required>
 			</div>
 		</div>
 		<div class="row">
 			<div class="form-group col-md-12 mx-auto">
 				<input type="text" class="form-control rounded" id="latitude" 
-				name="latitude" placeholder="Latitude">
+				name="latitude" placeholder="Latitude" required>
 			</div>
 		</div>
 		<div class="row">
 			<div class="form-group col-md-12 mx-auto">
 				<input type="text" class="form-control rounded" id="longitude"
-					name="longitude" placeholder="Longitude">
+					name="longitude" placeholder="Longitude" required>
 			</div>
 		</div>
 		<pre></pre>
