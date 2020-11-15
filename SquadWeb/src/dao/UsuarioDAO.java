@@ -73,7 +73,7 @@ public class UsuarioDAO {
 				if (rs.next()) {
 					usuario.setCod(rs.getInt("idUsuario"));
 					usuario.setNome(rs.getString("nome"));
-					usuario.setFone(rs.getInt("fone"));
+					usuario.setFone(rs.getLong("fone"));
 					usuario.setLogin(rs.getString("login"));
 					usuario.setSenha(rs.getString("senha"));
 					usuario.setTipo(rs.getInt("email"));
