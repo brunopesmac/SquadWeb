@@ -26,6 +26,7 @@ public class IncluirUsuario implements Command {
 		String senha = request.getParameter("senha");
 		String email = request.getParameter("email");
 		String tipoRD = request.getParameter("tipo");
+		
 		int tipo=0;
 		if(tipoRD.equals("Remetente")) {
 			tipo=2;
