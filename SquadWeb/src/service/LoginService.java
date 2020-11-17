@@ -8,12 +8,6 @@ public class LoginService {
 	
 	public void validacao(Login login) {
 		dao.logar(login);
-		if(login.getLogin().equals("admin")) {
-			
-			
-		}else if(login.getLogin()!=null) {
-			
-			
-		}
+		
 	}
 }

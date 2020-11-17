@@ -21,8 +21,6 @@ public class LoginDAO {
 					return login;
 				} else {
 					login.setId(0);
-					login.setLogin(null);
-					login.setSenha(null);
 				}
 				return login;
 			} catch (SQLException e) {

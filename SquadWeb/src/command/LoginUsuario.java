@@ -30,7 +30,7 @@ public class LoginUsuario implements Command {
 			HttpSession sessionOp = request.getSession();
 			sessionOp.setAttribute("logado", usuario);
 			request.setAttribute("Administrador", usuario);
-			RequestDispatcher view = request.getRequestDispatcher("tela_admin.jsp");
+			RequestDispatcher view = request.getRequestDispatcher("TelaInicial.jsp");
 			view.forward(request, response);
 			System.out.println("Administrador(a) "+usuario.getNome()+" logou");
 
@@ -39,7 +39,7 @@ public class LoginUsuario implements Command {
 			HttpSession sessionEs = request.getSession();
 			sessionEs.setAttribute("logado", usuario);
 			request.setAttribute("Remetente", usuario);
-			RequestDispatcher view = request.getRequestDispatcher("TelaInicialRemetente.jsp");
+			RequestDispatcher view = request.getRequestDispatcher("TelaInicial.jsp");
 			view.forward(request, response);
 			System.out.println("Remetente "+usuario.getNome()+" logou");
 			
@@ -47,12 +47,12 @@ public class LoginUsuario implements Command {
 			HttpSession sessionEs = request.getSession();
 			sessionEs.setAttribute("logado", usuario);
 			request.setAttribute("Destinatario", usuario);
-			RequestDispatcher view = request.getRequestDispatcher("tela_destinatario.jsp");
+			RequestDispatcher view = request.getRequestDispatcher("TelaInicial.jsp");
 			view.forward(request, response);
 			System.out.println("Destinatario "+usuario.getNome()+" logou");
 			
 		}else {
-			RequestDispatcher view = request.getRequestDispatcher("index.jsp");
+			RequestDispatcher view = request.getRequestDispatcher("senha_incorreta.jsp");
 			view.forward(request, response);
 		}
 

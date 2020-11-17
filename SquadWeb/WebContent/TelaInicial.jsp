@@ -14,13 +14,8 @@
         
     </head>
     <!-- Rodape -->
-    <c:choose>
-   		<c:when test="${Remetente.tipo == 2}"><c:import url="MenuEnvio.jsp"/></c:when> 
-   		<c:when test="${Remetente.tipo == 3}"><c:import url="MenuPedido.jsp"/></c:when> 
-   		<c:otherwise><c:import url="MenuAdm.jsp"/></c:otherwise>    
-	</c:choose>
+    <c:import url="Menu.jsp"/>
     
-	
     <body>
         <div id="main" class="container">
             <img srcset= "imagens/logosj.png 320w,
@@ -34,7 +29,7 @@
             <pre></pre>
             <pre></pre>
             <h1 class="page-header" style = "text-align:center;" >ProjetoC</h1>
-            <h1 class="page-header" style = "text-align:center;" >Bem vindo(a) ${Remetente.nome}, selecione uma opção no menu acima</h1>
+            <h1 class="page-header" style = "text-align:center;" >Bem vindo(a) ${logado.nome}, selecione uma opção no menu acima</h1>
         </div>
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>

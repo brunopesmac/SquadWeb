@@ -1,6 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8" 
 	pageEncoding="UTF-8"%>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>	
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
  
@@ -14,9 +14,25 @@
 	</button>
 	<div class="collapse navbar-collapse" id="navbarNavDropdown">
 		<ul class="nav navbar-nav navbar-right">
-			<li class="nav-item active"><a class="nav-link" href="#">Fazer pedido</a></li>
-			<li class="nav-item active"><a class="nav-link"
-				href="#">Trajetos</a></li>
+		<c:choose>
+		
+   			<c:when test="${logado.tipo == 2}">
+   				<li class="nav-item active"><a class="nav-link" href="enviar_pedir.jsp">Fazer entrega</a></li>
+				<li class="nav-item active"><a class="nav-link"	href="#">Trajetos</a></li>
+   			</c:when> 
+   			
+   			<c:when test="${logado.tipo == 3}">
+   				<li class="nav-item active"><a class="nav-link" href="enviar_pedir.jsp">Fazer pedido</a></li>
+				<li class="nav-item active"><a class="nav-link"	href="#">Trajetos</a></li>
+   			</c:when> 
+   			
+   			<c:otherwise>
+   				<li class="nav-item active"><a class="nav-link" href="#">Editar usuário</a></li>
+				<li class="nav-item active"><a class="nav-link"	href="#">Trajetos</a></li>
+   			</c:otherwise> 
+   			   
+		</c:choose>
+			
 		</ul>
 	</div>
 	<button type="button" class="btn btn-danger" style="float: right;"
@@ -42,11 +58,9 @@
 					<button type="button" class="btn btn-outline-primary"
 						data-dismiss="modal">Cancelar</button>
 				</div>
-
 			</div>
 		</div>
 	</div>
-	
 	<script>
 	$(document).ready(function(){
   		$("#btn-logoff").click(function(){
