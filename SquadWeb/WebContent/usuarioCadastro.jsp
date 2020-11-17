@@ -70,7 +70,7 @@
 					<button type="submit" class="btn btn-primary btn-lg btn-block rounded-pill" name="command" value="IncluirUsuario">Cadastrar</button>
 				</div>
 				<div class="col-md-6 mx-auto" style="text-align: center">
-					<a href="usuarioCadastro.jsp" class="btn btn-secondary btn-lg btn-block rounded-pill">Cancelar</a>
+					<a href="index.jsp" class="btn btn-secondary btn-lg btn-block rounded-pill">Cancelar</a>
 				</div>
 			</div>
 			<pre></pre>
