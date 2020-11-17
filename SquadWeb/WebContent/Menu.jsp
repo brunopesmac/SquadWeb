@@ -6,7 +6,7 @@
  
 
 <nav class="navbar navbar-expand-lg navbar-light">
-	<a class="navbar-brand" href="TelaInicialRemetente.jsp">ProjetoC</a>
+	<a class="navbar-brand" href="TelaInicial.jsp">ProjetoC</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
 		data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
 		aria-expanded="false" aria-label="Alterna navegação">
