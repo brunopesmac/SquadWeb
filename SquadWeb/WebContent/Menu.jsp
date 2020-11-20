@@ -53,8 +53,7 @@
 
 				<!-- Modal footer -->
 				<div class="modal-footer">
-					<a href="<%=request.getContextPath()%>/controller.do?command=Logoff" class="btn btn-danger">Fazer
-						logoff</a>
+					<a href="<%=request.getContextPath()%>/controller.do?command=Logoff" class="btn btn-danger">Fazer logoff</a>
 					<button type="button" class="btn btn-outline-primary"
 						data-dismiss="modal">Cancelar</button>
 				</div>

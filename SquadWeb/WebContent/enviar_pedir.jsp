@@ -62,8 +62,10 @@
             <div id="actions" class="row">
 				<div class="col-md-6 mx-auto" style="text-align: center">
 					<c:choose>
-	   					<c:when test="${logado.tipo == 2}"><button type="submit" class="btn btn-primary btn-lg btn-block rounded-pill" name="command" value="EnviarPedido">Fazer entrega</buttom></c:when> 
-	   					<c:otherwise><button type="submit" class="btn btn-primary btn-lg btn-block rounded-pill" name="command" value="EnviarPedido">Fazer pedido</buttom></c:otherwise>    
+					
+	   					<c:when test="${logado.tipo == 2}"><a href="TrajetoIda.jsp" type="submit" class="btn btn-primary btn-lg btn-block rounded-pill">Fazer entrega</a></c:when> 
+	   					<c:otherwise><a href="TrajetoIda.jsp" type="submit" class="btn btn-primary btn-lg btn-block rounded-pill">Fazer pedido</a></c:otherwise>
+	   					    
 					</c:choose>
 				</div>
 				<div class="col-md-6 mx-auto" style="text-align: center">

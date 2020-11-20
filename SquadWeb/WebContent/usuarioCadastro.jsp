@@ -10,6 +10,8 @@
         <link rel="stylesheet" href="css/style_cadastro.css">
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
         <title>ProjectC</title>
 
     </head>
@@ -38,17 +40,17 @@
 			</div>	
             <div class="row">
                 <div class="form-group col-md-12 mx-auto">
-                    <input type="text" class="form-control rounded" id="cpf" name="cpf" placeholder="CPF"required>
+                    <input type="text" class="form-control rounded" id="cpf" name="cpf" placeholder="CPF"required  onkeypress="return isNumberKey(event)" pattern=".{14,}"   required title="Digite um cpf válido" onkeydown="javascript: fMasc( this, mCPF );" maxlength="14">
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-12 mx-auto">
-                    <input type="text" class="form-control rounded" id="fone" name="fone" placeholder="Telefone Celular"required>
+                    <input type="text" class="form-control rounded" id="fone" name="fone" placeholder="Número de Celular" required pattern=".{11,}" onkeypress="return isNumberKey(event)" title="Digite o número de celular"  maxlength="20">
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-12 mx-auto">
-                    <input type="text" class="form-control rounded" id="login" name="login" placeholder="Usuário(Usada Para Login)"required>
+                    <input type="text" class="form-control rounded" id="login" name="login" placeholder="Usuário (Usado Para Login)"required>
                 </div>
             </div>
             <div class="row">
@@ -89,4 +91,8 @@
 			<c:import url="rodape.jsp"/>
    		</div>
     </body>
+    <script type="text/javascript" src="<%= request.getContextPath() %>/js/inputText.js"></script>
+    <script type="text/javascript">
+    $("#fone, #celular").mask("(00) 00000-0000");
+    </script>
 </html>

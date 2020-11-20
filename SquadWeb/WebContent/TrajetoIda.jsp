@@ -96,3 +96,8 @@
 		n = (n + 1) % 5;
 	}, 5000);
 </script>
+<script>
+	setTimeout(function() {
+		window.location.href = 'PedidoChegou.jsp';
+	}, 30000);
+</script>
