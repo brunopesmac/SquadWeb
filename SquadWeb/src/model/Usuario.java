@@ -3,11 +3,11 @@ package model;
 public class Usuario {
 	private int cod;
 	private String nome, login, senha, email;
-	private long cpf, fone;
+	private String cpf, fone;
 	private int tipo;
 
 	
-	public Usuario(int cod, String nome, String login, String senha, String email, long cpf, long fone, int tipo) {
+	public Usuario(int cod, String nome, String login, String senha, String email, String cpf, String fone, int tipo) {
 		super();
 		this.cod = cod;
 		this.nome = nome;
@@ -20,7 +20,7 @@ public class Usuario {
 	}
 
 
-	public Usuario(String nome, String login, String senha, String email, long cpf, long fone, int tipo) {
+	public Usuario(String nome, String login, String senha, String email, String cpf, String fone, int tipo) {
 		super();
 		this.nome = nome;
 		this.login = login;
@@ -93,22 +93,22 @@ public class Usuario {
 	}
 
 
-	public long getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
 
 
-	public void setCpf(long cpf) {
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
 
 
-	public long getFone() {
+	public String getFone() {
 		return fone;
 	}
 
 
-	public void setFone(long fone) {
+	public void setFone(String fone) {
 		this.fone = fone;
 	}
 

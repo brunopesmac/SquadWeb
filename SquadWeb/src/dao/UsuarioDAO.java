@@ -14,8 +14,8 @@ public class UsuarioDAO {
         try(Connection conn = ConnectionFactory.obtemConexao();
                 PreparedStatement stm = conn.prepareStatement(SQLInsert);){
             stm.setString(1, usuario.getNome());
-            stm.setLong(2, usuario.getCpf());
-            stm.setLong(3, usuario.getFone());
+            stm.setString(2, usuario.getCpf());
+            stm.setString(3, usuario.getFone());
             stm.setString(4, usuario.getLogin());
             stm.setString(5, usuario.getSenha());
             stm.setInt(6, usuario.getTipo());
@@ -40,7 +40,7 @@ public class UsuarioDAO {
 		try(Connection conn = ConnectionFactory.obtemConexao();
 				PreparedStatement stm = conn.prepareStatement(SQLUpdate);){
 	            stm.setString(1, usuario.getNome()); 
-	            stm.setLong(2, usuario.getFone());
+	            stm.setString(2, usuario.getFone());
 	            stm.setString(3, usuario.getLogin());
 	            stm.setString(4, usuario.getSenha());
 	            stm.setInt(5,usuario.getTipo());
@@ -73,7 +73,8 @@ public class UsuarioDAO {
 				if (rs.next()) {
 					usuario.setCod(rs.getInt("idUsuario"));
 					usuario.setNome(rs.getString("nome"));
-					usuario.setFone(rs.getLong("fone"));
+					usuario.setFone(rs.getString("fone"));
+					usuario.setCpf(rs.getString("cpf"));
 					usuario.setLogin(rs.getString("login"));
 					usuario.setSenha(rs.getString("senha"));
 					usuario.setEmail(rs.getString("email"));

@@ -20,8 +20,8 @@ public class IncluirUsuario implements Command {
 	public void executar(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String nome = request.getParameter("nome");
-		long cpf = Long.parseLong(request.getParameter("cpf"));
-		long fone = Long.parseLong(request.getParameter("fone")); 
+		String cpf = request.getParameter("cpf");
+		String fone = request.getParameter("fone"); 
 		String login = request.getParameter("login");
 		String senha = request.getParameter("senha");
 		String email = request.getParameter("email");
